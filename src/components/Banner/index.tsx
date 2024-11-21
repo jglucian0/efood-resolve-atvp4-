@@ -3,7 +3,7 @@ import Loader from '../Loader'
 
 import { useGetFeatureEfoodQuery } from '../../services/api'
 
-import { ImgBanner } from './styles'
+import { ImgBanner, ApresentacaoCategoria, ApresentacaoPrato } from './styles'
 
 type Params = {
   id: string
@@ -26,12 +26,12 @@ const Banner = () => {
   }
 
   return (
-    <div className="container">
-      <ImgBanner style={{ backgroundImage: `url(${catalogoServico.capa})` }}>
-        <h3>{catalogoServico.tipo}</h3>
-        <h1>{catalogoServico.titulo}</h1>
-      </ImgBanner>
-    </div>
+    <ImgBanner style={{ backgroundImage: `url(${catalogoServico.capa})` }}>
+      <div className="container">
+        <ApresentacaoCategoria>{catalogoServico.tipo}</ApresentacaoCategoria>
+        <ApresentacaoPrato>{catalogoServico.titulo}</ApresentacaoPrato>
+      </div>
+    </ImgBanner>
   )
 }
 
